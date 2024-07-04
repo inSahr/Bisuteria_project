@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>Registrar Clientes</h3>
+
+<div>
+    <form method="post" action="/clientes/guardar">
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" placeholder="Nombre del cliente"><br>
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" name="apellido" placeholder="Nombre del cliente"><br>
+
+        <label for="correo">Correo:</label>
+        <input type="email" name="correo" placeholder="Correo"><br>
+
+        <label for="direccion">Direccion:</label>
+        <input type="text" name="direccion" placeholder="Dirección"><br>
+        <input type="submit" value="Guardar">
+    </form>
+</div>
+
+{% endblock %}

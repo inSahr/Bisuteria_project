@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>EDITANDO CATEGORIAS</h3>
+
+<div>
+    <form method="post" action="{{ url_for('actualizarCategoria', id=categoria[0]) }}">
+
+        <label for="nombre">Nombre Categoria:</label>
+        <input type="text" name="nombre" id="nombre" value="{{ categoria[1] }}"><br>
+        <input type="submit" value="Guardar">
+    </form>
+</div>
+
+{% endblock %}
