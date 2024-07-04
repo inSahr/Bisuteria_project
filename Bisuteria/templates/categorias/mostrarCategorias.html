@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>MOSTRANDO CATEGORIAS</h3>
+
+<div>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+        </tr>
+        {% for categoria in categorias %}
+            <tr>
+                <td>{{ categoria[0] }}</td>
+                <td>{{ categoria[1] }}</td>
+                <td>
+                    <a href="{{ url_for('editarCategoria', id=categoria[0]) }}">Editar</a>
+                </td>
+                <td>
+                    <a href="{{ url_for('elimiarCategoria', id=categoria[0]) }}">Eliminar</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

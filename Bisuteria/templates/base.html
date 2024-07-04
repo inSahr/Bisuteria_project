@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <title>BISUTERIA</title>
+</head>
+<body>
+
+    <div class="cabecera">
+        <h1>SISTEMA DE PEDIDOS</h1>
+
+        <nav class="navegador">
+            <ul>
+                <li>
+                    <a href="/">INICIO</a>
+                </li>
+                <li>
+                    <a href="/pedidos">PEDIDOS</a>
+                </li>
+                <li>
+                    <a href="/categorias">CATEGORIAS</a>
+                </li>
+                <li>
+                    <a href="/productos">PRODUCTOS</a>
+                </li>
+                <li>
+                    <a href="/clientes">CLIENTES</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+
+    <main>
+        {% block content %}
+
+        {% endblock %}
+    </main>
+    
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>Crear Categorias</h3>
+
+<div>
+    <form method="post" action="/categorias/guardar">
+
+        <label for="nombre">Nombre Categoria:</label>
+        <input type="text" name="nombre" id="nombre" placeholder="Nombre de la categoria"><br>
+        <input type="submit" value="Guardar">
+    </form>
+</div>
+
+{% endblock %}

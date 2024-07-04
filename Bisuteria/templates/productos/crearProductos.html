@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>CREAR PRODUCTO</h3>
+
+<div>
+    <form method="post" action="/productos/guardar">
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" placeholder="Nombre de producto" required><br>
+
+        <label for="descripcion">Descripcion:</label>
+        <input type="textarea" name="descripcion" id="descripcion" placeholder="descripcion" required><br>
+
+        <label for="precio">Precio:</label>
+        <input type="number" name="precio" id="precio" step="0.01" required><br>
+
+        <label for="stock">Stock:</label>
+        <input type="number" name="stock" id="stock" required><br>
+
+        <label for="categoria">Categoria:</label>
+        <select name="categoria" id="categoria" required>
+            {% for categoria in categorias %}
+                <option value="{{ categoria[0] }}">{{ categoria[1] }}</option>
+            {% endfor %}
+        </select>
+        
+
+        <input type="submit" value="Guardar">
+    </form>
+    
+</div>
+
+{% endblock %}

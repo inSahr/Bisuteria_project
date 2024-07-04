@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>MOSTRANDO PEDIDOS</h3>
+
+<div>
+
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th>fecha</th>
+            <th>total</th>
+            <th>cliente</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+        </tr>
+        {% for pedido in pedidos %}
+
+        <tr>
+            <td>{{pedido[0]}}</td>
+            <td>{{pedido[1]}}</td>
+            <td>{{pedido[2]}}</td>
+            <td>{{pedido[3]}}</td>
+            <td>
+                <a href="{{ url_for('editarPedidos', id=pedido[0]) }}">Editar</a>
+            </td>
+            <td>
+                <a href="{{ url_for('eliminarPedidos', id=pedido[0]) }}">Eliminar</a>
+            </td>
+        </tr>
+        
+        {% endfor %}
+    </table>
+    
+</div>
+
+{% endblock %}

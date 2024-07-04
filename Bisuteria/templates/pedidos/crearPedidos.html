@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>CREAR PEDIDO</h3>
+
+<div>
+    <form method="post" action="/pedidos/guardar">
+        <label for="fecha">Fecha:</label>
+        <input type="date" name="fecha" id="fecha" placeholder="Fecha de pedido" required><br>
+        <label for="total">Total:</label>
+        <input type="number" name="total" id="total" placeholder="Total" required><br>
+        <label for="cliente">Cliente:</label>
+        <select name="cliente" id="cliente" required>
+            {% for cliente in clientes %}
+                <option value="{{ cliente[0] }}">{{ cliente[1] }}</option>
+            {% endfor %}
+        </select>
+        
+        <input type="submit" value="Guardar">
+    </form>
+    
+</div>
+
+{% endblock %}

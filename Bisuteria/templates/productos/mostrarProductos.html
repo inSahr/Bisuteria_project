@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>MOSTRANDO PRODUCTOS</h3>
+
+<div>
+
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th>nombre</th>
+            <th>descripcion</th>
+            <th>precio</th>
+            <th>cantidad</th>
+            <th>categoria</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+        </tr>
+        {% for producto in productos %}
+
+        <tr>
+            <td>{{producto[0]}}</td>
+            <td>{{producto[1]}}</td>
+            <td>{{producto[2]}}</td>
+            <td>{{producto[3]}}</td>
+            <td>{{producto[4]}}</td>
+            <td>{{producto[5]}}</td>
+            <td>
+                <a href="{{ url_for('editarProducto', id=producto[0]) }}">Editar</a>
+            </td>
+            <td>
+                <a href="{{ url_for('eliminarProducto', id=producto[0]) }}">Eliminar</a>
+            </td>
+        </tr>
+        
+        {% endfor %}
+    </table>
+    
+</div>
+
+{% endblock %}
